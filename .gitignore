@@ -1,6 +1,9 @@
 # Bootstrap
 app/bootstrap*
 
+# Storm
+.idea/
+
 # Symfony directories
 vendor/*
 */logs/*
