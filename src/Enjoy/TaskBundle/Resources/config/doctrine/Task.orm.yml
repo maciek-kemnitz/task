@@ -1,0 +1,26 @@
+Enjoy\TaskBundle\Entity\Task:
+    type: entity
+    table: task
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        title:
+            type: string
+            length: 140
+        description:
+            type: text
+        created_at:
+            type: datetime
+
+
+
+
+
+
+#	protected $element;
+#	protected $group;
+#	protected $attachment;
+#	protected $author;
+#	protected $priority;   http://docs.doctrine-project.org/en/2.0.x/cookbook/mysql-enums.html

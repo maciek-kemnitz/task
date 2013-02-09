@@ -1,3 +1,3 @@
-enjoy_task_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: EnjoyTaskBundle:Default:index }
+add_task:
+    pattern:  /add-task
+    defaults: { _controller: EnjoyTaskBundle:Default:add }
