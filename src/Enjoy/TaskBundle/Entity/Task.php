@@ -13,7 +13,7 @@ class Task
 #	protected $element;
 #	protected $group;
 #	protected $attachment;
-#	protected $author;
+	protected $author;
 #	protected $priority;
 	protected $created_at;
 
@@ -120,5 +120,28 @@ class Task
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    /**
+     * Set author
+     *
+     * @param \Enjoy\UserBundle\Entity\User $author
+     * @return Task
+     */
+    public function setAuthor(\Enjoy\UserBundle\Entity\User  $author = null)
+    {
+        $this->author = $author;
+    
+        return $this;
+    }
+
+    /**
+     * Get author
+     *
+     * @return \Enjoy\UserBundle\Entity\User
+     */
+    public function getAuthor()
+    {
+        return $this->author;
     }
 }

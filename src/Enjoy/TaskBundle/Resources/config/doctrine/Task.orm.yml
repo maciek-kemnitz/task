@@ -5,6 +5,14 @@ Enjoy\TaskBundle\Entity\Task:
         id:
             type: integer
             generator: { strategy: AUTO }
+
+    manyToOne:
+        author:
+            targetEntity: \Enjoy\UserBundle\Entity\User
+            joinColumn:
+                name: author_id
+                referencedColumnName: id
+
     fields:
         title:
             type: string

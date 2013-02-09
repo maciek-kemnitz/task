@@ -1,3 +1,7 @@
+enjoy_user:
+    resource: "@EnjoyUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 enjoy_task:
     resource: "@EnjoyTaskBundle/Resources/config/routing.yml"
     prefix:   /

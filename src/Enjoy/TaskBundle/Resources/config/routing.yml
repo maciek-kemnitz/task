@@ -1,3 +1,12 @@
 add_task:
     pattern:  /add-task
     defaults: { _controller: EnjoyTaskBundle:Default:add }
+
+save_task:
+    pattern:  /save-task
+    defaults: { _controller: EnjoyTaskBundle:Default:save }
+
+
+show_task:
+    pattern:  /tasks
+    defaults: { _controller: EnjoyTaskBundle:Default:show }

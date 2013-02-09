@@ -12,6 +12,11 @@ class TaskType extends AbstractType
 	{
 		$builder->add('title');
 		$builder->add('description');
+		$builder->add('author', 'entity', array(
+			'class' => 'EnjoyUserBundle:User',
+
+		));
+
 		$builder->add('created_at');
 
 	}
@@ -25,6 +30,7 @@ class TaskType extends AbstractType
 	{
 		$resolver->setDefaults(array(
 			'data_class' => 'Enjoy\TaskBundle\Entity\Task',
+			'cascade_validation' => true,
 		));
 	}
 }
