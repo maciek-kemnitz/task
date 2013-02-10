@@ -16,6 +16,10 @@ class TaskType extends AbstractType
 			'class' => 'EnjoyUserBundle:User',
 
 		));
+		$builder->add('team', 'entity', array(
+			'class' => 'EnjoyUserBundle:Team',
+
+		));
 
 		$builder->add('created_at');
 

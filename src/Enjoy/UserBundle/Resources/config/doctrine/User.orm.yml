@@ -5,7 +5,12 @@ Enjoy\UserBundle\Entity\User:
         id:
             type: integer
             generator: { strategy: AUTO }
-
+    manyToOne:
+        team:
+            targetEntity: Team
+            joinColumn:
+                name: team_id
+                referencedColumnName: id
 
     fields:
         name:

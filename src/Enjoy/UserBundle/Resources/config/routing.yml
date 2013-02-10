@@ -1,3 +1,9 @@
 enjoy_user_homepage:
     pattern:  /hello/{name}
     defaults: { _controller: EnjoyUserBundle:Default:index }
+
+user_home:
+    pattern:  /profile/{id}
+    defaults: { _controller: EnjoyUserBundle:Profile:show }
+    requirements:
+            id:  \d+

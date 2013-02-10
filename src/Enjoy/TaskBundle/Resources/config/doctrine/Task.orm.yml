@@ -12,6 +12,11 @@ Enjoy\TaskBundle\Entity\Task:
             joinColumn:
                 name: author_id
                 referencedColumnName: id
+        team:
+            targetEntity: \Enjoy\UserBundle\Entity\Team
+            joinColumn:
+               name: team_id
+               referencedColumnName: id
 
     fields:
         title:

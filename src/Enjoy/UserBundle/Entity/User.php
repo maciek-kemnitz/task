@@ -12,6 +12,7 @@ class User
 	protected $surname;
 	protected $email;
 	protected $password;
+	protected $team;
 #	protected $roles;
 #	protected $created_at;
 
@@ -123,4 +124,27 @@ class User
 	{
 		return $this->name . " " . $this->surname;
 	}
+
+    /**
+     * Set team
+     *
+     * @param \Enjoy\UserBundle\Entity\Team $team
+     * @return User
+     */
+    public function setTeam(\Enjoy\UserBundle\Entity\Team $team = null)
+    {
+        $this->team = $team;
+    
+        return $this;
+    }
+
+    /**
+     * Get team
+     *
+     * @return \Enjoy\UserBundle\Entity\Team 
+     */
+    public function getTeam()
+    {
+        return $this->team;
+    }
 }

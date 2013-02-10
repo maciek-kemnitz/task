@@ -11,7 +11,7 @@ class Task
 	protected $title;
 	protected $description;
 #	protected $element;
-#	protected $group;
+	protected $team;
 #	protected $attachment;
 	protected $author;
 #	protected $priority;
@@ -143,5 +143,28 @@ class Task
     public function getAuthor()
     {
         return $this->author;
+    }
+
+    /**
+     * Set team
+     *
+     * @param \Enjoy\UserBundle\Entity\Team $team
+     * @return Task
+     */
+    public function setTeam(\Enjoy\UserBundle\Entity\Team $team = null)
+    {
+        $this->team = $team;
+    
+        return $this;
+    }
+
+    /**
+     * Get team
+     *
+     * @return \Enjoy\UserBundle\Entity\Team 
+     */
+    public function getTeam()
+    {
+        return $this->team;
     }
 }

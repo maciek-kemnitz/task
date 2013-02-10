@@ -19,6 +19,7 @@ class DefaultController extends Controller
 
 
 		$form = $this->createForm(new TaskType(), $task);
+		$showSummary = false;
 
 		if ($request->isMethod('POST')) {
 			$form->bind($request);
@@ -30,11 +31,13 @@ class DefaultController extends Controller
 				$em = $this->getDoctrine()->getManager();
 				$em->persist($task);
 				$em->flush();
+
+				$showSummary = true;
 			}
 		}
 
 		return $this->render('EnjoyTaskBundle:Default:add.html.twig', array(
-			'form' => $form->createView(),
+			'form' => $form->createView(), 'task' => $task, 'show_summary' => $showSummary
 		));
 	}
 
@@ -46,6 +49,12 @@ class DefaultController extends Controller
 
 	public function showAction()
 	{
+		$tasks = $this->getDoctrine()
+					->getRepository('EnjoyTaskBundle:Task')
+					->findAll();
 
+		return $this->render('EnjoyTaskBundle:Default:show.html.twig', array(
+			'tasks' => $tasks
+		));
 	}
 }
