@@ -1,6 +1,7 @@
 Enjoy\UserBundle\Entity\User:
     type: entity
     table: user
+    repositoryClass: Enjoy\UserBundle\Entity\UserRepository
     id:
         id:
             type: integer
@@ -11,6 +12,12 @@ Enjoy\UserBundle\Entity\User:
             joinColumn:
                 name: team_id
                 referencedColumnName: id
+    oneToMany:
+        roles:
+            targetEntity: Role
+            mappedBy: user
+
+
 
     fields:
         name:
@@ -23,6 +30,9 @@ Enjoy\UserBundle\Entity\User:
             type: string
             length: 50
         password:
+            type: string
+            length: 100
+        salt:
             type: string
             length: 100
 #        created_at:

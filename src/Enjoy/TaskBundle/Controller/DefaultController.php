@@ -15,9 +15,10 @@ class DefaultController extends Controller
 
 	public function addAction(Request $request)
 	{
+		$user = $this->getUser();
+
 		$task = new Task();
-
-
+		$task->setAuthor($user);
 		$form = $this->createForm(new TaskType(), $task);
 		$showSummary = false;
 
@@ -32,7 +33,7 @@ class DefaultController extends Controller
 				$em->persist($task);
 				$em->flush();
 
-				$showSummary = true;
+				return $this->redirect($this->generateUrl("user_home"));
 			}
 		}
 
@@ -49,6 +50,9 @@ class DefaultController extends Controller
 
 	public function showAction()
 	{
+		#$user = $this->get('security.context')->getToken()->getUser();
+		$user = $this->getUser();
+
 		$tasks = $this->getDoctrine()
 					->getRepository('EnjoyTaskBundle:Task')
 					->findAll();

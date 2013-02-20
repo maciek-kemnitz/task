@@ -1,7 +1,0 @@
-parameters:
-#    enjoy_user.example.class: Enjoy\UserBundle\Example
-
-services:
-#    enjoy_user.example:
-#        class: %enjoy_user.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

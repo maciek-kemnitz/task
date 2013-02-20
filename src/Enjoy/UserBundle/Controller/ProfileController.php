@@ -11,8 +11,17 @@ class ProfileController extends Controller
 		return $this->render('EnjoyUserBundle:Default:index.html.twig', array('name' => $name));
 	}
 
-	public function showAction($id)
+	public function showAction()
 	{
-		return $this->render('EnjoyUserBundle:Default:index.html.twig', array('name' => $name));
+		/**
+		 * @var \Enjoy\UserBundle\Entity\User $user
+		 */
+		$user = $this->getUser();
+
+		$tasks = $this->getDoctrine()
+				 ->getRepository('EnjoyTaskBundle:Task')
+				 ->findByTeam($user->getTeam());
+
+		return $this->render('EnjoyUserBundle:Profile:show.html.twig', array("tasks" => $tasks));
 	}
 }

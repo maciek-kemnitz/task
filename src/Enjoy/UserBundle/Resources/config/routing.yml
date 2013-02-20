@@ -1,9 +1,14 @@
-enjoy_user_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: EnjoyUserBundle:Default:index }
+login:
+    pattern:   /login
+    defaults:  { _controller: EnjoyUserBundle:Security:login }
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:  /logout
 
 user_home:
-    pattern:  /profile/{id}
+    pattern:  /profile
     defaults: { _controller: EnjoyUserBundle:Profile:show }
     requirements:
             id:  \d+

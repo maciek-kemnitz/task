@@ -3,14 +3,20 @@
 {% block body %}
     <div class="well">
         <form action="" method="post" {{ form_enctype(form) }}>
-            {{ form_widget(form) }}
+            {{ form_errors(form) }}
 
+            {{ form_row(form.title) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.team) }}
+            <div class="hide">
+            {{ form_rest(form) }}
+            </div>
             <input type="submit" />
         </form>
     </div>
-    {% if show_summary %}
-        {% include 'EnjoyTaskBundle:Modal:summary.html.twig'
+    {# if show_summary #}
+        {# include 'EnjoyTaskBundle:Modal:summary.html.twig'
             with {'task': task}
-        %}
-    {% endif %}
+        #}
+    {# endif #}
 {% endblock %}
